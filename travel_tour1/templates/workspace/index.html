@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Откройте для себя мир приключений с Travello{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-between mb-4">
+        <h3>Все наши туры</h3>
+        <div>
+            <a href="{% url 'create_tour' %}" class="btn btn-success">Создать тур</a>
+        </div>
+    </div>
+
+
+    <div class="row-container">
+        <div class="row">
+        <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div id='card' class="card h-100">
+                <div class="card-body">
+                    <h3>Фильтр</h3>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-8 col-lg-9">
+            <div class="row">
+                {% for item in page_obj %}
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ item.image.url }}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-price">Цена: {{ item.price }}</p>
+                            <p class="card-category">Категория: {{ item.category.name }}</p>
+                            <p class="card-location">Местоположение: {{ item.location }}</p>
+                            <p class="card-text">
+                                Теги:
+                                {% for tag in item.tags.all %}
+                                    <a href="#">{{ tag.name }}</a>{% if not forloop.last %} / {% endif %}
+                                {% endfor %}
+                            </p>
+                            <div>
+                                <a href="{% url 'detail_tour' item.id %}" class="btn btn-primary">Подробнее</a>
+                                <a href="{% url 'update_tour' id=item.id %}" class="btn btn-warning">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a id='trash' href="{% url 'delete_tour' id=item.id %}" class="btn btn-danger">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% if page_obj.has_previous or page_obj.has_next %}
+            <nav>
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% for i in page_obj.paginator.page_range %}
+                    {% if page_obj.number == i %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ i }}</span>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+    
+
+{% endblock %}

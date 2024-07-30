@@ -1,0 +1,33 @@
+{% load static %}
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="{% static 'img/Group 590 (1).png' %}" alt="Logo">
+    </div>
+    <div class="burger-menu" id="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li class="nav-item"><a href="{% url 'index' %}">Home</a></li>
+    </ul>
+    <div class="nav-categories desktop-only">
+        {% include 'components/nav_categories.html'%}
+        <li id='ws' class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'workspace' %}">Workspace</a>
+        </li>
+    </div>
+    <form action="{% url 'index' %}" method="get" class="d-flex" role="search">
+        <i id="lupa" class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input class="form-control" value="{{ request.GET.search }}" name="search" type="search" placeholder="Куда хотите полететь?" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+    </form>
+</nav>
+
+
+
+
+
+
+
+
+

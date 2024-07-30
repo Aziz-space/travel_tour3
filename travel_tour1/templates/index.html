@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Откройте для себя мир приключений с Travello{% endblock %}
+
+{% block content %}
+    <div class="home_title">
+        <div class="home_text">
+        <h2>Откройте для себя мир приключений с Travello</h2>
+    </div>
+    <div class="all_tours_text">
+        <h3>Все наши туры</h3>
+    </div>
+    </div>
+
+    <div class="cardS_container">
+        {% for item in page_obj %}
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{ item.image.url }}" class="card-img-top" alt="">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-price">Цена: {{ item.price }}</p>
+                    <p class="card-category">Категория: {{ item.category }}</p>
+                    <p class="card-location">Местоположение: {{ item.location }}</p>
+                    <p class="card-text">
+                        Теги:
+                        {% for tag in item.tags.all %}
+                            <a href="#">{{ tag.name }}</a>{% if not forloop.last %} / {% endif %}
+                        {% endfor %}
+                    </p>
+                    <a href="{% url 'detail_tour' item.id %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include 'pagination.html'%}
+{% endblock %}

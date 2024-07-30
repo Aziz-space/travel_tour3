@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}{{ tour.name }} - Travel Agency{% endblock %}
+
+{% block content %}
+<div class="parent-container">
+    <div class="detail-container">
+        <div class="detail-image">
+            <img src="{{ tour.image.url }}" alt="{{ tour.name }}">
+        </div>
+        <div class="detail-info">
+            <h2>{{ tour.name }}</h2>
+            <p class="detail-price"><strong>Цена:</strong> {{ tour.price }}</p>
+            <p class="detail-category"><strong>Категория:</strong> {{ tour.category }}</p>
+            <p class="detail-location"><strong>Местоположение:</strong> {{ tour.location }}</p>
+            <p class="detail-tags">
+                <strong>Теги:</strong>
+                {% for tag in tour.tags.all %}
+                    <a href="#">{{ tag.name }}</a>{% if not forloop.last %} / {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    <div class="detail-description-container">
+        <h1>Описание:</h1>
+        <p class="detail-description">{{ tour.description }}</p>
+    </div>
+</div>
+{% endblock %}

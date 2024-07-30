@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}| Update Tour{% endblock title %}
+
+{% block content %}
+
+<div class="form-container">
+    <h3 class="mb-4">Update Tour</h3>
+    <form action="{% url 'update_tour' tour.id %}" method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {% for input in form %}
+            <div class="mb-4">
+                <label for="tour_name">{{ input.label }}</label>
+                {{ input }}
+                {% for error in input.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+{% endblock content %}

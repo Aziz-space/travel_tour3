@@ -1,0 +1,856 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    background-image: url("{% static 'img/Decore.png' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow-x: hidden;
+    min-width: 592px !important; 
+}
+
+
+
+.background-image img {
+    width: 1019.28px;
+    height: 1160.64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+
+
+header {
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav .auth-buttons a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav .auth-buttons .login {
+    color: #333;
+}
+
+nav .auth-buttons .signup {
+    background: #ff7b54;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav .language-select button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-control {
+    width: 230px !important;
+    height: 40px !important;
+    padding-left: 30px !important;
+    border: 1px solid #a9a5a5;
+    border-radius: 15px;
+    font-size: 16px;
+    outline: none;
+    background-color: white;
+}
+
+#lupa {
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 12px;
+    cursor: pointer;
+}
+
+.btn {
+    background: #ff7b54;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e67e22;
+}
+
+.home_text h2 {
+    width: 950px;
+    height: 40px;
+    font-size: 40px;
+    color: rgb(24, 30, 75);
+    margin: auto;
+    justify-content: center;
+    font-family: Poppins;
+}
+
+.all_tours_text h3 {
+    width: 370px;
+    height: 10px;
+    font-size: 40px;
+    color: rgb(24, 30, 75);
+    margin: auto;
+    font-family: Poppins;
+}
+
+.all_tours_text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 276px;
+    margin-top: 60px;
+    height: 39px;
+    margin: 0 auto;
+    margin-left: 705px;
+    justify-content: center;
+    top: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 5px solid #ff7b54;
+    padding-bottom: 10px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.btn {
+    background: #ff7b54;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e67e22;
+}
+
+#lupa {
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 12px;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 170px;
+    height: 40px;
+    padding: 20px;
+}
+
+.nav-item {
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-item a:hover {
+    color: #ff7b54;
+}
+
+
+
+
+
+
+#ws {
+    font-weight: bold;
+}
+
+
+
+/* ---------------------------- */
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    width: 300px;
+    height: 500px;
+    border-radius: 31.92px;
+    margin: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-text a {
+    color: #ff7b54;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.btn-primary {
+    background: #ff7b54;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.btn-primary:hover {
+    background: #e67e22;
+    color: #fff;
+}
+
+.cardS_container {
+    margin-top: 150px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* --------------------------------------- */
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination .step-links a,
+.pagination .step-links .current {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.pagination .step-links a:hover {
+    background-color: #f2f2f2;
+}
+
+.pagination .step-links .current {
+    background-color: #ff7b54;
+    color: #fff;
+    border: 1px solid #ff7b54;
+}
+
+.pagination .step-links i {
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.detail-container {
+    display: flex;
+    max-width: 1000px;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 6px 6px 58px 2px rgba(34, 60, 80, 0.15);
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.detail-image {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-image img {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+.detail-info {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.detail-description-container {
+    max-width: 1000px;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 6px 6px 58px 2px rgba(34, 60, 80, 0.15);
+    overflow-y: auto; 
+}
+
+.detail-description {
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    font-family: sans-serif;
+    color: rgb(94, 98, 130);
+    font-weight: 400px;
+    font-size: 20px;
+    word-wrap: break-word;
+    flex: 1;
+    letter-spacing: 5px;
+}
+
+.detail-info > * {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.detail-tags a {
+    color: #ff7b54;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; 
+    background: white;
+    border-radius: 25px;
+    box-shadow: 1px 4px 32px 4px rgba(34, 60, 80, 0.07);
+}
+
+.navbar .logo img {
+    max-width: 100px; 
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links .nav-item {
+    margin-right: 20px; 
+}
+
+.nav-links .nav-item a {
+    text-decoration: none;
+    color: #333333; 
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links .nav-item a:hover {
+    color: #ff7b54; 
+}
+
+#navbar-toggle {
+    display: none; 
+}
+
+.burger-menu {
+    cursor: pointer;
+    display: none;
+}
+
+.burger-menu i {
+    font-size: 24px;
+    color: #333333;
+}
+
+.nav-categories {
+    display: flex;
+    gap: 20px; 
+    flex-wrap: nowrap;
+}
+
+.nav-select {
+    display: none;
+    position: absolute;
+    top: 100%; /* Положение под полем поиска */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Убедитесь, что выше других элементов */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-select.show {
+    display: block;
+}
+
+
+
+
+.desktop-only {
+    display: flex;
+}
+
+.mobile-only {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 1px 4px 32px 4px rgba(34, 60, 80, 0.07);
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links .nav-item {
+    margin-right: 20px;
+}
+
+.nav-categories {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.home_text h2 {
+    width: 100%;
+    margin-top: 90px;
+    text-align: center;
+}
+
+.all_tours_text {
+    margin-top: 20px; 
+}
+
+.cardS_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+.nav-categories.desktop-only{
+    margin: auto;
+    width: 500px;
+}
+
+
+
+
+
+
+.form-container {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+
+.text-danger {
+    color: red !important;
+}
+
+
+.form-control {
+    width: 100% !important;
+    height: 50px !important;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container textarea.form-control {
+    height: 150px; 
+}
+
+.form-container .btn {
+    width: 100%;
+}
+.form-container .btn {
+    width: 100%;
+}
+
+
+
+#tour_description {
+    width: 100% !important;
+    height: 150px !important;
+}
+
+
+#card {
+    height: 1040px;
+}
+
+
+
+
+.form-control .file{
+    background-color: #e67e22;
+}
+
+
+.btn{
+    margin-top: 20px;
+}
+
+
+
+.row {
+    display: flex;
+    
+}
+
+.row .row {
+    flex-wrap: wrap;
+}
+
+.row-container {
+    padding: 20px;
+}
+
+
+
+#trash {
+    margin-left: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .home_title {
+        text-align: center;
+        margin-top: 20px; /* Установите нужный отступ для home_title */
+    }
+
+    .all_tours_text {
+        margin-left: 50%;
+        text-align: center;
+        margin-top: 100px; /* Установите нужный отступ для all_tours_text */
+    }
+
+    .nav-categories.mobile-only.active + .home_title {
+        margin-top: calc(20px + 100px); /* Отступ от категорий плюс отступ от home_title */
+    }
+
+    .nav-categories.mobile-only.active + .home_title + .all_tours_text {
+        margin-top: calc(20px + 100px + 20px); /* Отступ от категорий плюс отступ от home_title и от all_tours_text */
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 10px;
+    }
+
+    .burger-menu {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-categories.desktop-only {
+        display: none;
+        height: 280px;
+    }
+
+    .nav-categories.mobile-only {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        padding: 10px;
+        border-radius: 5px;
+
+    }
+
+    .nav-categories.mobile-only.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+    
+    
+
+
+    .home_text h2 {
+        width: 100%;
+        margin-top: 90px;
+        text-align: center;
+    }
+
+    .all_tours_text {
+        margin-top: 100px;
+    }
+
+    .all_tours_text h3 {
+        width: 100%;
+    }
+
+    .btn-outline-success {
+        display: none !important;
+    }
+
+    .burger-menu {
+        margin-left: 455px !important;
+        margin-top: -60px !important;
+    }
+
+    .d-flex {
+        margin-left: 130px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+    }
+
+
+
+
+
+@media (max-width: 768px) {
+    .detail-description-container {
+        margin: 20px;
+    }
+
+    .cardS_container .card {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .detail-container {
+        margin: 20px;
+        
+    }
+        
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+       
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .burger-menu {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 10px; /* Пространство между элементами, если нужно */
+    }
+
+    .nav-links {
+        display: none; /* Скрыть менюшку по умолчанию */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px; /* Пространство между ссылками и поиском */
+    }
+
+    .nav-links.active {
+        display: flex; /* Показать менюшку при активации бургера */
+    }
+
+    .nav-categories {
+        display: none; 
+        width: 100%;
+        text-align: center;
+        margin-top: 10px; /* Пространство между категориями и поиском */
+    }
+    .nav-categories{
+        flex-direction: column;
+    }
+
+    .home_text h2{
+        width: 100%;
+        margin-top: 90px;
+        text-align: center;
+    }
+
+
+    .all_tours_text {
+        margin-top: 100px;
+    }
+    .all_tours_text h3{
+        width: 100%;
+    }
+
+    .nav-categories.active {
+        display: flex; /* Показать категории при активации бургера */
+    }
+    .btn-outline-success{
+        display: none !important;
+    }
+
+    .burger-menu {
+        margin-left: 455px !important;
+        margin-top: -60px !important;
+    }
+
+    .d-flex {
+        margin-left: 130px;
+        margin-top: -39px;
+        margin-bottom: 10px;
+    }
+
+    .burger-menu {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-categories.mobile-only {
+        display: none; 
+    }
+
+    .nav-select.show {
+        display: block; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 592px) {
+    body {
+        width: 592px; /* Минимальная ширина, чтобы не уменьшаться */
+    }
+}
