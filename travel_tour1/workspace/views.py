@@ -45,3 +45,11 @@ def update_tour(request, id):
                 
     return render(request, 'workspace/update_tour.html', {'form': form, 'tour': tour})
 
+
+
+
+
+
+
+
+# fdsfdsfdsfdfds
