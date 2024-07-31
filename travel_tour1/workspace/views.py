@@ -31,8 +31,7 @@ def delete_tour(request, id):
     return redirect('/workspace/')
 
 
-
-
+# fdsjafjkldsklfjkldskfjdklfkdsj
 
 
 def update_tour(request, id):
