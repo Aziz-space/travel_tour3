@@ -1,5 +1,6 @@
 from django import forms
 from travel_tour.models import Category, Tag, Tour
+from django.contrib.auth.forms import AuthenticationForm
 
 
 class TourForm(forms.ModelForm):
@@ -80,3 +81,19 @@ class UpdateForm(forms.ModelForm):
                 'class': 'form-select',
             }),
         }
+        
+        
+        
+        
+        
+class LoginForm(forms.Form):
+
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={"autofocus": True, 'class': 'form-control', 'placeholder': 'имя пользователя'}), 
+        label='Имя пользователя'
+    )
+    password = forms.CharField(
+        label='Пароль',
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "current-password", 'class': 'form-control', 'placeholder': 'пароль'}),
+    )        

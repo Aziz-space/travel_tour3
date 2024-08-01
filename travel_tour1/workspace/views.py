@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from travel_tour.models import Tour, Category, Tag
 from .forms import *
+from pprint import pprint
+from django.contrib.auth import authenticate, login, logout
 
 
 def workspace(request):
@@ -52,4 +54,33 @@ def update_tour(request, id):
 
 
 
-# fdsfdsfdsfdfds
+
+def login_profile(request):
+    if request.user.is_authenticated:
+        return redirect('/workspace/')
+    
+    form = LoginForm()
+
+    if request.method == 'POST':
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)   
+                return redirect('/workspace/') 
+            
+
+            message = 'The user does not exist or the password is incorrect.'
+            return render(request, 'auth/login.html', {'form': form, 'message': message})
+
+
+    return render(request, 'auth/login.html', {'form': form})
+
+
+def logout_profile(request):
+    if request.user.is_authenticated:
+        logout(request)
+    
+    return redirect('/workspace/')

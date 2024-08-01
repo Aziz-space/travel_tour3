@@ -7,27 +7,34 @@
     <div class="burger-menu" id="burger-menu">
         <i class="fas fa-bars"></i>
     </div>
-    <ul class="nav-links" id="nav-links">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="burger-menu"><i class="fas fa-bars"></i></label>
+    <ul class="nav-links">
+        {% if request.user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle">
+                    {{ request.user.username }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'workspace' %}">Workspace</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Register</a>
+            </li>
+        {% endif %}
         <li class="nav-item"><a href="{% url 'index' %}">Home</a></li>
+        {% include 'components/nav_categories.html' %}
     </ul>
-    <div class="nav-categories desktop-only">
-        {% include 'components/nav_categories.html'%}
-        <li id='ws' class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'workspace' %}">Workspace</a>
-        </li>
-    </div>
-    <form action="{% url 'index' %}" method="get" class="d-flex" role="search">
+    <form action="{% url 'index' %}" method="get" class="search-form" role="search">
         <i id="lupa" class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input class="form-control" value="{{ request.GET.search }}" name="search" type="search" placeholder="Куда хотите полететь?" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Поиск</button>
+        <input class="form-control" value="{{ request.GET.search }}" name="search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </nav>
-
-
-
-
-
-
-
-
-

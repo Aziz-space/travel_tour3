@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}| Login{% endblock title %}
+
+{% block content %}
+
+
+
+
+<div id='lgcard' class="d-flex justify-content-center align-items-center" style="min-height: 80vh; margin-left: 0" >
+    <div class="card" style="min-width: 400px; margin: 0 auto";>
+        <div class="card-body">
+            <form action="{% url 'login' %}" id="login_form" method="POST" novalidate>
+                {% csrf_token %}
+                <div class="mb-4" style="padding-right: 25px;">
+                    <label for="{{form.username.id}}">
+                        <h4>Имя:</h4>
+                    </label>
+                    {{ form.username }}
+                    <div class="text-danger">
+                        {{ form.username.errors }}
+                    </div>
+                </div>
+                <div class="mb-4" style="padding-right: 25px;">
+                    <label for="{{form.password.id}}">
+                        <h4>Пароль:</h4>
+                    </label>
+                    {{ form.password }}
+                     <div class="text-danger">
+                        {{ form.password.errors }}
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary d-block w-100">Login</button>
+                </div>
+
+                {% if message %}
+                    <div class="mt-4 text-danger text-center">
+                        <i class="fa-solid fa-circle-exclamation"></i> {{ message }}
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

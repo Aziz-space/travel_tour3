@@ -622,6 +622,114 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 
+
+
+
+
+/* Основные стили для навигационной панели */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Добавлено для корректного позиционирования выпадающего меню */
+}
+
+/* Логотип и бургер-меню */
+.logo img {
+    height: 40px; /* Размер логотипа */
+}
+
+.burger-menu {
+    display: none; /* Скрываем бургер-меню на больших экранах */
+}
+
+/* Стили для ссылки навигации */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 0.5rem; /* Уменьшение отступов */
+    position: relative; /* Для корректного позиционирования выпадающего меню */
+}
+
+/* Стили для ссылки навигации */
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem;
+    display: block;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+/* Показ выпадающего меню при наведении */
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Стили для формы поиска */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Перемещает форму поиска вправо */
+}
+
+.search-icon {
+    margin-right: 0.5rem;
+}
+
+.form-control {
+    width: 200px; /* Ограничение ширины поля поиска */
+}
+
+.btn {
+    margin-left: 0.5rem;
+}
+
+/* Стили для переключателя (чекбокса) в бургер-меню */
+.menu-toggle {
+    display: none; /* Скрываем чекбокс */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     .home_title {
         text-align: center;
