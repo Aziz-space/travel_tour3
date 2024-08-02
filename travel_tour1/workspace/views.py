@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from travel_tour.models import Tour, Category, Tag
 from .forms import *
 from pprint import pprint
+from workspace.forms import LoginForm,  RegisterForm
 from django.contrib.auth import authenticate, login, logout
 
 
@@ -84,3 +85,31 @@ def logout_profile(request):
         logout(request)
     
     return redirect('/workspace/')
+
+
+
+
+
+
+
+
+
+
+
+def register_profile(request):
+    if request.user.is_authenticated:
+        return redirect('/workspace/')
+    
+    form = RegisterForm()
+
+    
+    if request.method == 'POST':
+        form = RegisterForm(data=request.POST)
+        
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/workspace/')
+    
+
+    return render(request, 'auth/register.html', {'form': form})
