@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from django.db.models import Q
 from travel_tour.models import Tour, Tag, Category
+from workspace.filters import TourFilter
 
 def main(request):
-    tours = Tour.objects.all()
+    tours = Tour.objects.all().order_by('name')
+
 
     search_query = request.GET.get('search')
     if search_query:
@@ -22,13 +24,21 @@ def main(request):
         tours = tours.filter(tags=tag)
         
 
-    paginator = Paginator(tours, 3)
+    filterset = TourFilter(request.GET, queryset=tours)
+    tours = filterset.qs
+
+    
+    print("Filtered tours count:", tours.count())  
+
+
+
+    paginator = Paginator(tours, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     tags = Tag.objects.all()
 
-    return render(request, 'index.html', {'page_obj': page_obj, 'tags': tags})
+    return render(request, 'index.html', {'page_obj': page_obj, 'tags': tags, 'filterset': filterset})
 
 
 

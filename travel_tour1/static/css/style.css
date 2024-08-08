@@ -305,10 +305,6 @@ input[type="search"]::-webkit-search-cancel-button {
     border: 1px solid #ff7b54;
 }
 
-.pagination .step-links i {
-    vertical-align: middle;
-    font-size: 16px;
-}
 
 .detail-container {
     display: flex;
@@ -720,6 +716,90 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 
+
+
+
+
+
+/* /////    alert    ////// */
+
+
+
+/* Основные стили для сообщений */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+/* Стили для ошибки */
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/* Стили для предупреждения */
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+/* Стили для успеха */
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+/* Стили для информации */
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+
+
+/* /////    alert    ////// */
+
+
+
+
+
+
+
+
+
+
+/* ////   filter ///// */
+
+
+.filter-checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Отступы между чекбоксами */
+}
+
+.filter-checkbox input[type="checkbox"] {
+    margin-right: 10px; /* Отступ между чекбоксом и меткой */
+}
+
+.filter-checkbox label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+
+
+
+/* ////   filter ///// */
 
 
 
