@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}| Register{% endblock title %}
+{% block title %}| {{ request.user.username }}{% endblock title %}
 
 {% block content %}
 
@@ -36,15 +36,17 @@
 </style>
 
 <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh; margin-left: 0;">
-    <div class="card" style="min-width: 500px; height: 100%; margin: 0 auto; background-color: white;">
+    <div class="card" style="min-width: 700px; height: 100%; margin: 0 auto; background-color: white;">
         <div class="card-body">
-            <form action="{% url 'register' %}" id="form" method="POST" novalidate>
+            <h3 class="text-center mb-4">Профиль {{ request.user.username }}</h3>
+            
+            <form action="{% url 'profile' %}" id="profile_form" method="POST" novalidate>
                 {% csrf_token %}
-
+                
                 {% for field in form %}
                     <div class="form-group">
-                        {{ field.label_tag }} <!-- Лейбл -->
-                        {{ field }} <!-- Поле ввода -->
+                        {{ field.label_tag }}  <!-- Лейбл сверху -->
+                        {{ field }}  <!-- Поле ввода -->
                         {% if field.errors %}
                             <div class="text-danger">
                                 {% for error in field.errors %}
@@ -54,9 +56,12 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-
-                <div>
-                    <button type="submit" class="btn btn-primary d-block w-100">Register</button>
+                
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary d-block w-100">Сохранить</button>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="{% url 'change_password' %}">Изменить пароль</a>
                 </div>
             </form>
         </div>

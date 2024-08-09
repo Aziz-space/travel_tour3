@@ -3,9 +3,10 @@ from django.core.paginator import Paginator
 from django.urls import reverse
 from travel_tour.models import Tour
 from .forms import TourForm
-from workspace.forms import LoginForm, RegisterForm
+from workspace.forms import LoginForm, RegisterForm, ChangePsswordForm, ChangeProfileForm
 from django.contrib.auth import authenticate, login, logout
 from .decorators import admin_required
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 def workspace(request):
@@ -105,3 +106,55 @@ def register_profile(request):
         messages.error(request, f'Исправьте некоторые ошибки, приведенные ниже!')
 
     return render(request, 'auth/register.html', {'form': form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@login_required(login_url='/workspace/login/')
+def profile(request):
+
+    form = ChangeProfileForm(instance=request.user)
+
+    if request.method == 'POST':
+        form = ChangeProfileForm(instance=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Профиль успешно изменен')
+            return redirect('/workspace/')
+
+    return render(request, 'auth/profile.html', {'form': form})
+
+
+@login_required(login_url='/workspace/login/')
+def change_password(request):
+
+    form = ChangePsswordForm(user=request.user)
+
+    if request.method == 'POST':
+
+        form = ChangePsswordForm(user=request.user, data=request.POST)
+
+        if form.is_valid():
+            new_password = form.cleaned_data.get('new_password')
+            
+            user = request.user
+            user.set_password(new_password)
+            user.save()
+
+            login(request, user)
+
+            messages.success(request, f'Пароль успешно обновлен')
+            return redirect('/workspace/')
+
+    return render(request, 'auth/change_password.html', {'form': form})
